@@ -1,0 +1,32 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@layer base {
+  :root {
+    --bg-cream: #FAF3EA;
+    --ink: #241B15;
+    --accent-coral: #D64B3A;
+    --accent-blush: #E8B4A6;
+    --muted-brown: #8B8078;
+  }
+
+  body {
+    background-color: var(--bg-cream);
+    color: var(--ink);
+    font-family: var(--font-sans), system-ui, sans-serif;
+  }
+
+  h1, h2, h3, .font-serif-display {
+    font-family: var(--font-serif), Georgia, serif;
+  }
+}
+
+/* Custom Utilities for smooth scroll & responsive video */
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: #E8B4A6;
+  color: #241B15;
+}
