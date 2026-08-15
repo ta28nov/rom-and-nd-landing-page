@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { SiteHeader } from '@/components/nav/SiteHeader';
 import { Hero } from '@/components/hero/Hero';
 import { BentoGrid } from '@/components/bento/BentoGrid';
+import { CinemaSection } from '@/components/cinema/CinemaSection';
 import { SiteFooter } from '@/components/footer/SiteFooter';
 import { CartSheet } from '@/components/cart/CartSheet';
 
@@ -23,11 +24,14 @@ export function RomandPage() {
           heroVideoSrc="https://qwl6dynsdlyndcro.public.blob.vercel-storage.com/hf_20260815_165543_9d7552d7-8916-443f-b84e-d86494c6223e-vmll0Bj2faGuKbNtDAtKS7KJNOkURS.mp4"
         />
 
-        {/* Japanese Minimalist Bento Grid Section (Starts right below Video Hero) */}
+        {/* Japanese Minimalist Bento Grid Section */}
         <BentoGrid
           selectedShadeId={selectedShadeId}
           onSelectShade={setSelectedShadeId}
         />
+
+        {/* Cinematic Film & Framer Motion CDN Gallery Section */}
+        <CinemaSection />
       </main>
 
       {/* Minimal Brand Footer */}
