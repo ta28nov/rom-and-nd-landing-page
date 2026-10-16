@@ -26,10 +26,12 @@ export function SiteFooter() {
 
         {/* Subtle Copyright */}
         <p className="font-mono text-xs text-white/40 tracking-widest uppercase">
-          © {new Date().getFullYear()} rom&nd. All Rights Reserved.
+          © {new Date().getFullYear()} rom&nd. Tất cả các quyền được bảo lưu.
         </p>
 
       </div>
     </footer>
   );
 }
+
+

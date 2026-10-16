@@ -41,7 +41,7 @@ export function SiteHeader() {
         <button
           onClick={() => dispatch({ type: 'TOGGLE_CART' })}
           className="relative flex items-center justify-center p-2 rounded-full transition-all duration-200 hover:scale-105 active:scale-95 focus:outline-none group"
-          aria-label="Open shopping bag"
+          aria-label="Mở giỏ hàng"
         >
           <ShoppingBag
             className={`w-6 h-6 transition-colors group-hover:text-[#D64B3A] ${

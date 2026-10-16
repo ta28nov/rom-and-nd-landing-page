@@ -7,6 +7,8 @@ import Image from 'next/image';
 
 interface HeroProps {
   heroVideoSrc?: string;
+  selectedShadeId?: string;
+  onSelectShade?: (id: string) => void;
 }
 
 export function Hero({ heroVideoSrc }: HeroProps) {
@@ -25,7 +27,7 @@ export function Hero({ heroVideoSrc }: HeroProps) {
     <section
       ref={containerRef}
       id="hero"
-      className="relative min-h-[100dvh] w-full overflow-hidden bg-[#241B15] flex flex-col justify-end text-white"
+      className="relative min-h-[100dvh] w-full overflow-hidden bg-[#241B15] flex flex-col justify-end text-white pt-20"
     >
       {/* Background Video / Poster with Parallax Scale */}
       <motion.div style={{ scale: videoScale }} className="absolute inset-0 z-0 origin-center">
@@ -51,8 +53,8 @@ export function Hero({ heroVideoSrc }: HeroProps) {
           />
         )}
 
-        {/* Gradient Overlay across bottom 50% for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#241B15] via-[#241B15]/40 to-transparent" />
+        {/* Gradient Overlay across bottom 60% for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#241B15] via-[#241B15]/50 to-black/30" />
       </motion.div>
 
       {/* Content Container (Headline + Subline with Parallax & Fade) */}
@@ -68,8 +70,8 @@ export function Hero({ heroVideoSrc }: HeroProps) {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal leading-[0.95] tracking-tight text-[#FAF3EA]"
           >
-            Juicy color <br />
-            <em className="font-italic text-[#E8B4A6]">that lasts all day.</em>
+            Sắc môi căng mọng <br />
+            <em className="font-italic text-[#E8B4A6]">bền màu suốt ngày dài.</em>
           </motion.h1>
 
           {/* Subline */}
@@ -79,7 +81,7 @@ export function Hero({ heroVideoSrc }: HeroProps) {
             transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-xl text-sm sm:text-base md:text-lg font-sans text-white/80 leading-relaxed font-light"
           >
-            Nature-inspired fruit shades with a weightless, glass-like shine. Designed in Seoul to coat your lips in vibrant pigment that deepens with every hour.
+            Sắc màu trái cây tự nhiên kết hợp hiệu ứng bóng gương trong veo, nhẹ tênh trên bờ môi. Tinh tế từ Seoul, bền màu và càng thêm đằm thắm theo thời gian.
           </motion.p>
         </div>
       </motion.div>
@@ -90,9 +92,11 @@ export function Hero({ heroVideoSrc }: HeroProps) {
         transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
         className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center text-white/50 pointer-events-none"
       >
-        <span className="text-[10px] font-mono uppercase tracking-widest">Scroll</span>
+        <span className="text-[10px] font-mono uppercase tracking-widest">Cuộn</span>
         <ChevronDown className="w-4 h-4" />
       </motion.div>
     </section>
   );
 }
+
+

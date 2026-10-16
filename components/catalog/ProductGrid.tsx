@@ -4,9 +4,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { OTHER_PRODUCTS } from '@/lib/data';
+import { formatVND } from '@/lib/utils';
 
 export function ProductGrid() {
-  // Show only 4 calm items to avoid distracting from Juicy Lasting Tint
   const calmProducts = OTHER_PRODUCTS.slice(0, 4);
 
   return (
@@ -16,15 +16,15 @@ export function ProductGrid() {
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#241B15]/10 pb-6">
           <div className="space-y-1">
-            <span className="text-xs font-mono tracking-widest text-[#8B8078] uppercase">
-              DELIBERATELY CALM SELECTION
+            <span className="text-xs font-mono tracking-widest text-[#8B8078] uppercase font-semibold">
+              BỘ SƯU TẬP ĐỒNG HÀNH
             </span>
             <h3 className="font-serif text-2xl sm:text-3xl text-[#241B15] font-normal">
-              Complementary Formulas
+              Các Sản Phẩm Kết Hợp Hoàn Hảo
             </h3>
           </div>
           <span className="text-xs font-mono text-[#8B8078]">
-            4 Essential Companions
+            4 Món Đồ Không Thể Thiếu
           </span>
         </div>
 
@@ -58,11 +58,11 @@ export function ProductGrid() {
                   {product.category}
                 </span>
                 <div className="flex justify-between items-baseline gap-2">
-                  <h4 className="font-serif text-sm font-medium text-[#241B15] group-hover:text-[#D64B3A] transition-colors leading-snug">
+                  <h4 className="font-serif text-sm font-medium text-[#241B15] group-hover:text-[#D64B3A] transition-colors leading-snug truncate">
                     {product.name}
                   </h4>
-                  <span className="font-mono text-xs font-medium text-[#241B15]">
-                    ${product.price.toFixed(2)}
+                  <span className="font-mono text-xs font-semibold text-[#241B15] whitespace-nowrap">
+                    {formatVND(product.price)}
                   </span>
                 </div>
               </div>
@@ -74,3 +74,4 @@ export function ProductGrid() {
     </section>
   );
 }
+

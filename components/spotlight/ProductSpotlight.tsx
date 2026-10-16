@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Check, ShoppingBag } from 'lucide-react';
 import { HERO_PRODUCT, SHADES, SPOTLIGHT_BULLETS } from '@/lib/data';
 import { useCart } from '@/components/cart/CartProvider';
+import { formatVND } from '@/lib/utils';
 import { QuantityStepper } from './QuantityStepper';
 
 interface ProductSpotlightProps {
@@ -33,7 +34,7 @@ export function ProductSpotlight({ selectedShadeId, onSelectShade }: ProductSpot
       },
     });
 
-    setToastMessage(`Added ${quantity}x Juicy Lasting Tint (${currentShade.name}) to bag!`);
+    setToastMessage(`Đã thêm ${quantity}x Juicy Lasting Tint (${currentShade.name}) vào giỏ hàng!`);
     setTimeout(() => {
       setToastMessage(null);
     }, 3500);
@@ -45,8 +46,8 @@ export function ProductSpotlight({ selectedShadeId, onSelectShade }: ProductSpot
         
         {/* Section Title Eyebrow */}
         <div className="mb-12 text-center lg:text-left space-y-2">
-          <span className="text-xs font-mono tracking-widest text-[#D64B3A] uppercase">
-            PRODUCT SPOTLIGHT
+          <span className="text-xs font-mono tracking-widest text-[#D64B3A] uppercase font-semibold">
+            DÒNG SON CHỦ ĐẠO
           </span>
           <h2 className="font-serif text-4xl sm:text-5xl text-[#241B15]">
             Juicy Lasting Tint
@@ -69,7 +70,7 @@ export function ProductSpotlight({ selectedShadeId, onSelectShade }: ProductSpot
                 >
                   <Image
                     src={currentShade.imageSrc}
-                    alt={`rom&nd Juicy Lasting Tint in ${currentShade.name}`}
+                    alt={`rom&nd Juicy Lasting Tint tone ${currentShade.name}`}
                     fill
                     priority
                     className="object-cover"
@@ -98,7 +99,7 @@ export function ProductSpotlight({ selectedShadeId, onSelectShade }: ProductSpot
                   {HERO_PRODUCT.name}
                 </h3>
                 <span className="font-serif text-3xl font-semibold text-[#D64B3A]">
-                  ${HERO_PRODUCT.price.toFixed(2)}
+                  {formatVND(HERO_PRODUCT.price)}
                 </span>
               </div>
             </div>
@@ -111,7 +112,7 @@ export function ProductSpotlight({ selectedShadeId, onSelectShade }: ProductSpot
             <div id="shades" className="space-y-3 pt-4 border-t border-[#241B15]/10">
               <div className="flex justify-between items-center text-xs font-sans">
                 <span className="text-[#8B8078] uppercase tracking-wider font-mono">
-                  Select Shade:
+                  Chọn Tone Màu:
                 </span>
                 <span className="font-semibold text-[#241B15]">{currentShade.name}</span>
               </div>
@@ -137,7 +138,7 @@ export function ProductSpotlight({ selectedShadeId, onSelectShade }: ProductSpot
             {/* Quantity Stepper & Add to Bag */}
             <div className="space-y-4 pt-4 border-t border-[#241B15]/10">
               <div className="flex items-center gap-4">
-                <span className="text-xs font-mono uppercase tracking-wider text-[#8B8078]">Quantity:</span>
+                <span className="text-xs font-mono uppercase tracking-wider text-[#8B8078]">Số lượng:</span>
                 <QuantityStepper value={quantity} onChange={setQuantity} />
               </div>
 
@@ -146,14 +147,14 @@ export function ProductSpotlight({ selectedShadeId, onSelectShade }: ProductSpot
                 className="w-full flex items-center justify-center gap-3 rounded-full bg-[#D64B3A] py-4 text-xs font-sans font-semibold uppercase tracking-widest text-white shadow-xl hover:bg-[#b83b2b] transition-all duration-300 hover:scale-[1.01] active:scale-[0.99]"
               >
                 <ShoppingBag className="w-4 h-4" />
-                Add to Bag — ${(HERO_PRODUCT.price * quantity).toFixed(2)}
+                Thêm Vào Giỏ — {formatVND(HERO_PRODUCT.price * quantity)}
               </button>
             </div>
 
             {/* 4 Staggered Benefit Bullets */}
             <div className="pt-8 border-t border-[#241B15]/10 space-y-6">
               <h4 className="text-xs font-mono uppercase tracking-widest text-[#8B8078]">
-                Key Formulation Benefits
+                Đặc Trưng Công Thức Nổi Bật
               </h4>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -194,3 +195,4 @@ export function ProductSpotlight({ selectedShadeId, onSelectShade }: ProductSpot
     </section>
   );
 }
+

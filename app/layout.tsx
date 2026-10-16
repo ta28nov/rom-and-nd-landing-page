@@ -4,24 +4,24 @@ import './globals.css';
 import { CartProvider } from '@/components/cart/CartProvider';
 
 const fraunces = Fraunces({
-  subsets: ['latin'],
+  subsets: ['latin', 'vietnamese'],
   variable: '--font-serif',
   display: 'swap',
   style: ['normal', 'italic'],
 });
 
 const inter = Inter({
-  subsets: ['latin'],
+  subsets: ['latin', 'vietnamese'],
   variable: '--font-sans',
   display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: 'rom&nd — Juicy Lasting Tint | Nature-Inspired Lip Tint',
-  description: 'Nature-inspired, fruit-toned lip tints with a glass-like shine that stains beautifully and lasts all day.',
+  title: 'rom&nd Việt Nam — Juicy Lasting Tint | Son Tint Bóng Căng Mọng Thuần Khiết',
+  description: 'Khám phá dòng son tint bóng Juicy Lasting Tint từ rom&nd. Sắc màu trái cây tươi tắn, hiệu ứng bóng gương trong veo và lớp màu bền đẹp suốt cả ngày.',
   openGraph: {
-    title: 'rom&nd — Juicy Lasting Tint',
-    description: 'Discover Juicy Lasting Tint. Fruit-inspired pigment with glass-like radiant shine.',
+    title: 'rom&nd Việt Nam — Juicy Lasting Tint',
+    description: 'Son tint bóng căng mọng chuẩn phong cách Hàn Quốc. Chiết xuất trái cây tự nhiên, mọng nước và không bết dính.',
     images: ['https://romandbeauty.com/cdn/shop/files/JuicyLastingTint_Lifestyle.png'],
   },
 };
@@ -37,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${inter.variable} bg-[#FAF3EA]`}>
+    <html lang="vi" className={`${fraunces.variable} ${inter.variable} bg-[#FAF3EA]`}>
       <body className="bg-[#FAF3EA] text-[#241B15] font-sans antialiased selection:bg-[#E8B4A6] selection:text-[#241B15]">
         <CartProvider>
           {children}
@@ -46,3 +46,4 @@ export default function RootLayout({
     </html>
   );
 }
+

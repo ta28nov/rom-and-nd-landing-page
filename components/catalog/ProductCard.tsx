@@ -4,6 +4,8 @@ import React from 'react';
 import Image from 'next/image';
 import { Product } from '@/lib/types';
 
+import { formatVND } from '@/lib/utils';
+
 interface ProductCardProps {
   product: Product;
 }
@@ -40,10 +42,11 @@ export function ProductCard({ product }: ProductCardProps) {
             {product.name}
           </h4>
           <span className="font-mono text-xs font-semibold text-[#D64B3A]">
-            ${product.price.toFixed(2)}
+            {formatVND(product.price)}
           </span>
         </div>
       </div>
     </div>
   );
 }
+

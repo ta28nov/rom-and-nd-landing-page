@@ -27,3 +27,4 @@ yarn-error.log*
 # Temporary files
 .vercel/
 .vercel
+*.tsbuildinfo

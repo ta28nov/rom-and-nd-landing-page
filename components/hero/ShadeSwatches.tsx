@@ -21,10 +21,10 @@ export function ShadeSwatches({ selectedShadeId, onSelectShade }: ShadeSwatchesP
               isSelected ? 'scale-110 ring-2 ring-white ring-offset-2 ring-offset-black/50' : 'hover:scale-105 opacity-80 hover:opacity-100'
             }`}
             style={{ backgroundColor: shade.hex }}
-            aria-label={`Select shade ${shade.name}`}
+            aria-label={`Chọn tone màu ${shade.name}`}
           >
             {/* Tooltip */}
-            <span className="absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-black/80 px-2 py-1 text-[10px] font-mono text-white opacity-0 transition-opacity group-hover:opacity-100 pointer-events-none">
+            <span className="absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-black/90 px-2 py-1 text-[10px] font-sans text-white opacity-0 transition-opacity group-hover:opacity-100 pointer-events-none shadow-md z-20">
               {shade.name}
             </span>
           </button>
@@ -33,3 +33,4 @@ export function ShadeSwatches({ selectedShadeId, onSelectShade }: ShadeSwatchesP
     </div>
   );
 }
+

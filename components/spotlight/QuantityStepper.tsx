@@ -25,7 +25,7 @@ export function QuantityStepper({ value, onChange, min = 1, max = 10 }: Quantity
         onClick={handleDecrement}
         disabled={value <= min}
         className="p-1 text-[#241B15] hover:text-[#D64B3A] disabled:opacity-30 transition-colors"
-        aria-label="Decrease quantity"
+        aria-label="Giảm số lượng"
       >
         <Minus className="w-3.5 h-3.5" />
       </button>
@@ -34,10 +34,11 @@ export function QuantityStepper({ value, onChange, min = 1, max = 10 }: Quantity
         onClick={handleIncrement}
         disabled={value >= max}
         className="p-1 text-[#241B15] hover:text-[#D64B3A] disabled:opacity-30 transition-colors"
-        aria-label="Increase quantity"
+        aria-label="Tăng số lượng"
       >
         <Plus className="w-3.5 h-3.5" />
       </button>
     </div>
   );
 }
+
